@@ -629,6 +629,7 @@
 
             const wojakItems = document.querySelectorAll('.video-item');
             let currentPosition = 0;
+            let wasMobile = window.innerWidth <= 768;
 
             function updateWojakCarousel() {
                 const isMobile = window.innerWidth <= 768;
@@ -780,12 +781,14 @@
             setupCarousel3();
 
             window.addEventListener('resize', function() {
-                const wasDesktop = window.innerWidth > 768;
                 const isMobile = window.innerWidth <= 768;
 
-                if (wasDesktop !== !isMobile) {
+                // Reset carousel positions only when crossing the mobile/desktop breakpoint.
+                if (isMobile !== wasMobile) {
+                    currentPosition = 0;
                     currentIndex2 = 0;
                     currentIndex3 = 0;
+                    wasMobile = isMobile;
                 }
 
                 updateWojakCarousel();
