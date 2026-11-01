@@ -37,15 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return el;
   };
 
+  // Data layer lives in discussion-store.js (works on static hosting such as GitHub Pages).
   async function request(method = 'GET', data) {
-    const response = await fetch('/api/discussion', {
-      method,
-      headers: data ? { 'Content-Type': 'application/json' } : {},
-      body: data ? JSON.stringify(data) : undefined,
-    });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error || 'Unable to load discussion.');
-    return result;
+    if (!window.DiscussionStore) throw new Error('The discussion could not be loaded. Please refresh the page.');
+    return window.DiscussionStore.request(method, data);
+  }
+
+  if (status && window.DiscussionStore && window.DiscussionStore.mode === 'local') {
+    const note = element('p', 'discussion-storage-note', 'Comments are currently saved in this browser only.');
+    note.style.cssText = 'margin:4px 0 8px;font-size:12px;opacity:.7;';
+    status.insertAdjacentElement('afterend', note);
   }
 
   function session() {
