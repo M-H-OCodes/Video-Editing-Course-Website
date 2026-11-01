@@ -795,7 +795,7 @@ footer.site-footer .footer-copyright {
     border-radius: 6px;
 }
 
-/* Purpose Section: First paragraph across, second paragraph paired side-by-side and center-aligned with the right card */
+/* Purpose Section: Keep both paragraphs together on the left, with one visual card spanning them on the right. */
 .about-page .purpose-container {
     display: flex;
     flex-direction: column;
@@ -804,28 +804,23 @@ footer.site-footer .footer-copyright {
     border-top: 1px solid rgba(220, 100, 255, 0.2);
     width: 100%;
 }
-.about-page .purpose-text {
-    width: 100%;
-    min-width: 0;
-}
-.about-page .purpose-first-p {
-    width: 100%;
-    max-width: 100%;
-}
-.about-page .purpose-second-row {
+.about-page .purpose-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    gap: clamp(16px, 2.5vw, 32px);
-    align-items: center;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: clamp(18px, 3vw, 38px);
+    align-items: stretch;
     width: 100%;
     margin-top: 8px;
 }
-.about-page .purpose-second-row .ptwo {
-    margin: 0 !important;
+.about-page .purpose-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    min-width: 0;
 }
-.about-page .purpose-text .ptwo,
-.about-page .ptwo,
-.ptwo {
+.about-page .purpose-copy .ptwo,
+.about-page .ptwo {
     font-family: 'Times New Roman', Times, serif !important;
     font-size: 20px !important;
     line-height: 0.8cm !important;
@@ -833,34 +828,35 @@ footer.site-footer .footer-copyright {
     color: #ffffff !important;
     background-color: rgb(25, 0, 25) !important;
     border-radius: 4px !important;
-    margin: 8px 0 14px 0 !important;
-    padding: 8px 10px !important;
+    margin: 0 !important;
+    padding: 12px 14px !important;
     width: 100% !important;
     box-sizing: border-box !important;
 }
 .about-page .purpose-feature-card {
-    align-self: center;
+    align-self: stretch;
     justify-self: stretch;
+    min-width: 0;
+    width: 100%;
+    max-width: none;
     background: linear-gradient(135deg, rgba(46, 2, 51, 0.92) 0%, rgba(26, 0, 31, 0.98) 100%);
     border: 1px solid rgba(220, 100, 255, 0.4);
     border-radius: 12px;
-    padding: 12px 16px;
+    padding: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 16px;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
 }
 .about-page .purpose-card-media {
     position: relative;
     border-radius: 9px;
     overflow: hidden;
-    height: 120px;
-    width: 160px;
-    flex-shrink: 0;
+    flex: 0 0 clamp(125px, 15vw, 175px);
+    width: clamp(125px, 15vw, 175px);
+    height: clamp(160px, 20vw, 220px);
     border: 1px solid rgba(190, 0, 230, 0.35);
 }
 .about-page .purpose-card-media img {
@@ -870,9 +866,7 @@ footer.site-footer .footer-copyright {
     display: block;
     transition: transform 0.4s ease;
 }
-.about-page .purpose-feature-card:hover .purpose-card-media img {
-    transform: scale(1.04);
-}
+.about-page .purpose-feature-card:hover .purpose-card-media img { transform: scale(1.04); }
 .about-page .purpose-badge {
     position: absolute;
     top: 6px;
@@ -895,24 +889,24 @@ footer.site-footer .footer-copyright {
     justify-content: center;
 }
 .about-page .purpose-card-content h3 {
-    margin: 0 0 4px 0;
+    margin: 0 0 6px 0;
     color: #ffd8ff;
-    font-size: 16.5px;
+    font-size: 17px;
     font-family: Georgia, serif;
     font-weight: 700;
 }
 .about-page .purpose-card-content p {
-    margin: 0 0 6px 0;
+    margin: 0 0 8px 0;
     color: #dfcbe6;
     font-size: 13px;
-    line-height: 1.35;
+    line-height: 1.45;
 }
 .about-page .purpose-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     margin-top: 1px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 .about-page .purpose-tags span {
     font-size: 10.5px;
@@ -929,7 +923,7 @@ footer.site-footer .footer-copyright {
     align-self: flex-start;
     gap: 5px;
     margin-top: 2px;
-    padding: 5px 14px;
+    padding: 6px 14px;
     background: linear-gradient(135deg, #7c008a, #ab02ab);
     color: #ffffff;
     font-size: 12px;
@@ -944,10 +938,9 @@ footer.site-footer .footer-copyright {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(180, 0, 220, 0.4);
 }
-
 @media (max-width: 1100px) {
     .about-page .journey-container,
-    .about-page .purpose-second-row {
+    .about-page .purpose-layout {
         grid-template-columns: minmax(0, 1fr);
     }
     .about-page .software-images {
@@ -956,8 +949,8 @@ footer.site-footer .footer-copyright {
         padding-top: 0;
     }
     .about-page .purpose-feature-card {
-        max-width: 650px;
-        margin: 15px auto 0;
+        max-width: 760px;
+        margin: 8px auto 0;
     }
 }
 @media (max-width: 600px) {
@@ -966,8 +959,9 @@ footer.site-footer .footer-copyright {
         align-items: stretch;
     }
     .about-page .purpose-card-media {
+        flex: 0 0 auto;
         width: 100%;
-        height: 130px;
+        height: 160px;
     }
 }
 @media (max-width: 480px) {
@@ -978,9 +972,6 @@ footer.site-footer .footer-copyright {
     .about-page .purpose-feature-card { padding: 12px; }
 }
 
-/* ==========================================================================
-   Comments Discussion: Show More Button & Badges
-   ========================================================================== */
 .comments-pagination {
     display: flex;
     justify-content: center;
