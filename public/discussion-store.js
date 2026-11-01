@@ -65,63 +65,63 @@
       "id": "c-4",
       "username": "Zainab Noor",
       "text": "Could you do a deep dive video on audio sound effects (SFX) layering and audio ducking?",
-      "createdAt": "2026-02-03T13:54:00Z",
+      "createdAt": "2026-01-20T13:54:00Z",
       "parentId": null
     },
     {
       "id": "c-5",
       "username": "Daniyal Ahmed",
       "text": "Transitioning from montage cuts to story-driven commercial edits is exactly what I needed guidance on.",
-      "createdAt": "2025-12-16T10:36:00Z",
+      "createdAt": "2025-10-16T10:36:00Z",
       "parentId": null
     },
     {
       "id": "c-6",
       "username": "Saad Farooq",
       "text": "The Houston Kold style pacing breakdown in the portfolio section is incredible. What shutter angle was used?",
-      "createdAt": "2025-11-02T18:09:00Z",
+      "createdAt": "2025-07-02T18:09:00Z",
       "parentId": null
     },
     {
       "id": "c-7",
       "username": "Mariam Siddiqui",
       "text": "Really loved how simple and engaging the beginner playlist is. Finished all 5 lessons in one evening.",
-      "createdAt": "2025-09-19T14:22:00Z",
+      "createdAt": "2025-04-21T14:22:00Z",
       "parentId": null
     },
     {
       "id": "c-8",
       "username": "Usman Ghani",
       "text": "Looking forward to the Intermediate course! Any estimate on when lesson 1 drops?",
-      "createdAt": "2025-08-06T08:47:00Z",
+      "createdAt": "2025-02-08T08:47:00Z",
       "parentId": null
     },
     {
       "id": "c-9",
       "username": "Fatima Zahra",
       "text": "The explanation of J-cuts and L-cuts in editing was so clear. Made an immediate difference in my vlogs.",
-      "createdAt": "2025-06-24T19:31:00Z",
+      "createdAt": "2025-01-03T19:31:00Z",
       "parentId": null
     },
     {
       "id": "c-10",
       "username": "Rehan Sheikh",
       "text": "Great website layout and portfolio presentation brother! Very inspiring journey.",
-      "createdAt": "2025-05-09T11:05:00Z",
+      "createdAt": "2024-12-12T11:05:00Z",
       "parentId": null
     },
     {
       "id": "c-11",
       "username": "Khadija Ali",
       "text": "The advice to never over-rely on flashy transitions before getting the story pacing right is golden.",
-      "createdAt": "2025-03-27T16:18:00Z",
+      "createdAt": "2024-11-20T16:18:00Z",
       "parentId": null
     },
     {
       "id": "c-12",
       "username": "Omar Javed",
       "text": "Filmora was my first editor too back in 2020! Seeing your growth to commercial projects gives so much motivation.",
-      "createdAt": "2025-02-11T09:42:00Z",
+      "createdAt": "2024-11-05T09:42:00Z",
       "parentId": null
     }
   ];
