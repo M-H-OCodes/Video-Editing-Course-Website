@@ -1,0 +1,209 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+} */
+
+.carousel-container {
+    position: relative;
+    width: 95%;
+    max-width: 99.5%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px;
+    left: 0.65%;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.video-item {
+    min-width: 50%; /* Show 2 videos at a time, so each takes 50% width */
+    box-sizing: border-box;
+    margin-right: -12px;
+    margin-left: 5px;
+    padding: 30px;
+}
+
+.vidv{
+    width: 100%;
+    height: 100%; /* Ensures all videos have the same height */
+    object-fit: cover; /* Maintains the aspect ratio while fitting the height */
+    border-radius: 10px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-container1 {
+    position: absolute;
+    width: 95%;
+    max-width: 99.5%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px;
+    left: 0.65%;
+}
+
+.carousel1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 videos per row */
+    grid-gap: 15px; /* Adjust spacing between videos */
+    transition: transform 0.4s ease-in-out;
+}
+
+.video-item1 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.vidv1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintains the aspect ratio while fitting the height */
+    border-radius: 10px;
+}
+
+.carousel-container2 {
+    position: relative;
+    width: 95%;
+    max-width: 99.5%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px;
+    left: 0.65%;
+}
+
+.carousel2 {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.video-item2 {
+    min-width: 34%; /* Show 2 videos at a time, so each takes 50% width */
+    box-sizing: border-box;
+    margin-right: -10px;
+    margin-left: -1px;
+    padding: 30px;
+}
+
+@media (max-width: 992px){
+    .video-item2{
+        padding: 40px;
+        margin-left: -82px;
+        margin-right: 50px;
+        min-width:40%;
+    }
+}
+
+.vidv2{
+    width: 100%;
+    height: 100%; /* Ensures all videos have the same height */
+    object-fit: cover; /* Maintains the aspect ratio while fitting the height */
+    border-radius: 10px;
+}
+
+button.prev1 {
+    left: 20px;
+}
+
+button.next1 {
+    right: 20px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 992px){
+    button.next1{
+        right: 40px;
+    }
+}
+
+
+
+.carousel-container3 {
+    position: relative;
+    width: 95%;
+    max-width: 99.5%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px;
+    left: 0.65%;
+    height: 30%; /* This ensures half the height */
+}
+
+.carousel3 {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    height: 100%; /* Makes the carousel fill the container */
+}
+
+.video-item3 {
+    min-width: 50%; /* Show 2 videos at a time */
+    height: 100%; /* Ensures video item fills the available height */
+    box-sizing: border-box;
+    margin-right: -12px;
+    margin-left: 10px;
+    padding: 30px;
+}
+
+.vidv3 {
+    width: 100%;
+    height: 100%; /* Ensures videos adapt to the container's height */
+    object-fit: cover; /* Maintains aspect ratio of videos */
+    border-radius: 10px;
+}
+
+button.prev2 {
+    left: 15px;
+}
+
+button.next2 {
+    right: 15px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

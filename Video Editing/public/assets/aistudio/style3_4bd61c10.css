@@ -1,0 +1,616 @@
+/* Navigation styles */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 460px;
+    height: 50px;
+    background: black;
+    border-radius: 8px;
+    margin: 10px 30px 10px auto;
+    position: relative;
+    z-index: 10;
+}
+
+nav a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0 25px;
+    z-index: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+nav a:hover{
+    color: black;
+    transform:translateY(-3px);
+    transition: 0.4s linear;
+    text-decoration: underline;
+}
+
+nav span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(-800deg,rgb(74, 1, 74), rgb(86, 1, 86),rgb(130, 1, 130),rgb(167, 2, 167));
+    border-radius: 8px;
+    transition: .5s;
+}
+
+nav a.active {
+  color: black;
+  background-color: rgb(74, 1, 74);
+  text-decoration: underline;
+  transform: none;
+  transition: none;
+}
+
+/* Hover effects for navigation - using percentage-based layout for responsiveness */
+nav a:nth-child(1):hover~span{
+    left: 0;
+    width: calc(25% - 10px); /* Each nav item takes roughly 25% of the container */
+}
+
+nav a:nth-child(2):hover~span{
+    left: 25%;
+    width: calc(25% - 10px);
+}
+
+nav a:nth-child(3):hover~span{
+    left: 50%;
+    width: calc(25% - 10px); /* Courses link */
+}
+
+nav a:nth-child(4):hover~span{
+    left: 75%;
+    width: calc(25% - 5px); /* About us link - slightly wider to account for container edge */
+}
+
+/* Media queries for navigation */
+@media screen and (max-width: 992px) {
+    nav {
+        max-width: 450px;
+    }
+    nav a {
+        padding: 20px;
+    }
+    /* Adjusted hover animations for tablet view */
+    nav a:nth-child(1):hover~span{
+        left: 0;
+        width: calc(25% - 10px);
+    }
+    
+    nav a:nth-child(2):hover~span{
+        left: 25%;
+        width: calc(25% - 10px);
+    }
+    
+    /* Adjusted width for Courses link */
+    nav a:nth-child(3):hover~span{
+        left: 50%;
+        width: calc(25% - 8px);
+    }
+    
+    /* Adjusted width for About us link */
+    nav a:nth-child(4):hover~span{
+        left: 75%;
+        width: calc(25% - 4px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        max-width: 400px;
+    }
+    nav a {
+        padding: 15px;
+        font-size: 0.9em;
+        /* Ensure text fits well */
+        min-width: 0;
+        flex: 1;
+    }
+    /* Slightly smaller text for longer nav items */
+    nav a:nth-child(3), nav a:nth-child(4) {
+        font-size: 0.85em;
+    }
+    
+    /* Adjusted hover animations for smaller tablets */
+    nav a:nth-child(1):hover~span{
+        left: 0;
+        width: calc(25% - 8px);
+    }
+    
+    nav a:nth-child(2):hover~span{
+        left: 25%;
+        width: calc(25% - 8px);
+    }
+    
+    /* Slightly wider for Courses on smaller screens */
+    nav a:nth-child(3):hover~span{
+        left: 50%;
+        width: calc(25% - 6px);
+    }
+    
+    /* Slightly wider for About us on smaller screens */
+    nav a:nth-child(4):hover~span{
+        left: 75%;
+        width: calc(25% - 2px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        max-width: 320px;
+    }
+    nav a {
+        padding: 8px;
+        font-size: 0.85em;
+        /* Ensure text fits well */
+        min-width: 0;
+        flex: 1;
+    }
+    /* Even smaller text for longer nav items on mobile */
+    nav a:nth-child(3), nav a:nth-child(4) {
+        font-size: 0.8em;
+        letter-spacing: -0.5px;
+    }
+    
+    /* Adjusted hover animations for mobile view */
+    nav a:nth-child(1):hover~span{
+        left: 0;
+        width: calc(25% - 6px);
+    }
+    
+    nav a:nth-child(2):hover~span{
+        left: 25%;
+        width: calc(25% - 6px);
+    }
+    
+    /* Custom width for Courses link on mobile */
+    nav a:nth-child(3):hover~span{
+        left: 50%;
+        width: calc(25% - 4px);
+    }
+    
+    /* Custom width for About us link on mobile */
+    nav a:nth-child(4):hover~span{
+        left: 75%;
+        width: calc(25% - 1px);
+    }
+}
+
+/* Animation keyframes */
+@keyframes glowing{
+    0%{background-position: 0 0;}
+    50%{background-position: 400% 0;}
+    100%{background-position: 0 0;}
+}
+
+@keyframes shadowPulse {
+    0% {
+      box-shadow: 10px 10px 10px rgba(89, 2, 63, 0.5);
+    }
+    50% {
+      box-shadow: 20px 20px 20px rgba(78, 1, 72, 0.7);
+    }
+    100% {
+      box-shadow: 10px 10px 10px rgba(74, 1, 58, 0.5);
+    }
+  }
+
+  @keyframes shadowPulses {
+    0% {
+      box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      box-shadow: 6px 20px 20px rgba(0, 0, 0, 0.7);
+    }
+    100% {
+      box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+/* Footer styles */
+footer{
+    position: relative;
+    width: 100%;
+    background:rgb(120, 1, 153);
+    min-height: 200px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  footer .social_icons, footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    z-index: 1001;
+    flex-wrap: wrap;
+}
+
+footer .social_icons li, footer .menu li {
+    list-style: none;
+}
+
+footer .social_icons li a {
+    font-size: 2em;
+    color: black;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s ease;
+}
+
+footer .social_icons li a:hover {
+    transform: translateY(-10px) scale(120%);
+    color: rgb(177, 1, 177);
+}
+
+footer .menu{
+    position: relative;
+    z-index: 1001;
+  }
+
+  footer .menu li a {
+    position: relative;
+    z-index: 1001;
+    font-size: 1.2em;
+    color: black;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer .menu li a:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    color: rgb(177, 1, 177);
+    font-size: 1.5em;
+}
+
+  footer p{
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 0 20px;
+  }
+
+  footer .wave {
+    position: absolute;
+    left: 0;
+    top: -165px;
+    width: 100%;
+    height: 300px;
+    background: url(p1wave.png);
+    background-size: 3000px 300px;
+}
+
+  footer .wave#wave1{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animatewave 4s linear infinite;
+  }
+
+  footer .wave#wave2{
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animatewave_02 4s linear infinite;
+  }
+
+  footer .wave#wave3{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animatewave 3s linear infinite;
+  }
+
+  footer .wave#wave4{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animatewave_02 3s linear infinite;
+  }
+
+  @keyframes animatewave{
+    0%{
+      background-position-x: 3000px;
+    }
+    100%{
+      background-position-x: 0px;
+    }
+  }
+
+  @keyframes animatewave_02{
+    0%{
+      background-position-x: 0px;
+    }
+    100%{
+      background-position-x: 3000px;
+    }
+  }
+  
+/* Animation keyframes for page elements */
+@keyframes Appear{
+  from{
+      opacity: 0;
+      transform: translateY(100px);
+  }
+
+  to{
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes glow {
+  from {text-shadow: 0 0 10px rgb(61, 1, 61), 0 0 20px rgb(61, 1, 61), 0 0 30px #e60073;}
+  to {text-shadow: 0 0 10px #ffffff, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6;}
+}
+
+@keyframes Fade-In{
+  from{
+      transform: scale(0%);
+  }
+
+  to {
+      transform: scale(100%);
+  }
+}
+
+.web{
+  animation-name: Fade-In;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+
+@keyframes Fade1 {
+  from {
+      transform: translateY(-100px);
+  }
+
+  to {
+      transform: translateY(0px);
+  }
+}
+
+.heading {
+  animation: Fade1 1.4s 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes Fade {
+  from {
+      transform: translateY(300px);
+  }
+
+to {
+  transform: translateY(0px);
+}
+}
+
+@keyframes Slide{
+  from{
+      transform: translateX(-600px);
+  }
+
+  to{
+      transform: translateX(0px);
+  }
+}
+
+@keyframes Scale{
+  from{
+      transform: scale(0%);
+  }
+
+  to{
+      transform: scale(100%);
+  }
+}
+
+@keyframes Slide1{
+  from{
+      transform: translateX(600px);
+  }
+
+  to{
+      transform: translateX(0px);
+  }
+}
+
+/* Animation classes for specific elements */
+#in {
+  animation: Fade 0.7s 1;
+}
+
+#i {
+  animation: Fade 0.7s 1;
+}
+
+#mi{
+animation: Slide 0.7s 1;
+animation-timing-function: ease-out;
+}
+
+#m{
+animation: Scale 1s 1;
+animation-timing-function: ease;
+}
+
+#my{
+  animation: Slide1 0.7s 1;
+  animation-timing-function: ease-out; 
+}
+
+/* Scroll animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  footer .social_icons li a {
+      font-size: 1.5em;
+      margin: 0 8px;
+  }
+  
+  footer .menu li a {
+      font-size: 1em;
+      margin: 0 8px;
+  }
+  
+  footer p {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .menu {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  footer .menu li {
+      margin: 5px 0;
+  }
+  
+  footer .social_icons li a {
+      font-size: 1.3em;
+      margin: 0 5px;
+  }
+}
+
+/* Video scroll animations */
+.video-wrapper {
+  overflow: hidden;
+}
+
+/* Base animation for videos */
+.video-wrapper .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  box-shadow: 0 0 0 rgba(128, 0, 128, 0.3);
+}
+
+/* When videos come into view */
+.video-wrapper .animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 10px 10px 10px rgba(128, 0, 128, 0.5);
+}
+
+/* Video scroll animations - applied through JavaScript */
+@keyframes scrollDownVideo {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+    box-shadow: 0 0 0 rgba(128, 0, 128, 0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 10px 10px 10px rgba(128, 0, 128, 0.5);
+  }
+}
+
+@keyframes scrollUpVideo {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+    box-shadow: 0 0 0 rgba(128, 0, 128, 0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 10px 10px 10px rgba(128, 0, 128, 0.5);
+  }
+}
+
+/* Classes applied via JavaScript */
+.scroll-down-video {
+  animation: scrollDownVideo 0.8s ease-out forwards;
+}
+
+.scroll-up-video {
+  animation: scrollUpVideo 0.8s ease-out forwards;
+}
+
+/* Show background video and best-section only at desktop resolution */
+@media only screen and (min-width: 1440px) {
+  .back, .best-section {
+    display: block !important; /* Show at full desktop size */
+  }
+}
+
+/* Hide background video and best-section below desktop resolution */
+@media only screen and (max-width: 1439px) {
+  .back, .best-section {
+    display: none !important; /* Hide when screen size is reduced */
+  }
+}
+
+/* Video scroll animations */
+@keyframes videoScrollDown {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes videoScrollUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes to be added via JavaScript */
+.video-scroll-down {
+  animation: videoScrollDown 1s ease-out forwards;
+}
+
+.video-scroll-up {
+  animation: videoScrollUp 1s ease-out forwards;
+}
