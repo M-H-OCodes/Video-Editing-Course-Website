@@ -37,103 +37,102 @@
       "id": "c-1",
       "username": "Hamza Malik",
       "text": "Lesson 3 on rough cuts changed how I approach my timeline. Cutting out dead air first saves hours!",
-      "minutesAgo": 35,
+      "createdAt": "2026-10-24T15:03:00Z",
       "parentId": null
     },
     {
       "id": "c-2",
       "username": "Ayesha Tariq",
       "text": "What frame rate do you recommend shooting in when planning for 50% slow motion in CapCut?",
-      "minutesAgo": 120,
+      "createdAt": "2026-07-08T12:15:00Z",
       "parentId": null
     },
     {
       "id": "c-2-1",
       "username": "Muhammad Hadi",
       "text": "Shoot in at least 60fps (or 120fps if available)! That way when you slow it down to 50% on a 30fps timeline, it stays buttery smooth without frame blending artifacts.",
-      "minutesAgo": 95,
+      "createdAt": "2026-07-09T07:28:00Z",
       "parentId": "c-2"
     },
     {
       "id": "c-3",
       "username": "Bilal Khan",
       "text": "The color grading breakdown in lesson 5 is so practical. InShot vs CapCut comparison was very helpful.",
-      "minutesAgo": 300,
+      "createdAt": "2026-04-12T17:40:00Z",
       "parentId": null
     },
     {
       "id": "c-4",
       "username": "Zainab Noor",
       "text": "Could you do a deep dive video on audio sound effects (SFX) layering and audio ducking?",
-      "minutesAgo": 840,
+      "createdAt": "2026-02-03T13:54:00Z",
       "parentId": null
     },
     {
       "id": "c-5",
       "username": "Daniyal Ahmed",
       "text": "Transitioning from montage cuts to story-driven commercial edits is exactly what I needed guidance on.",
-      "minutesAgo": 1440,
+      "createdAt": "2025-12-16T10:36:00Z",
       "parentId": null
     },
     {
       "id": "c-6",
       "username": "Saad Farooq",
       "text": "The Houston Kold style pacing breakdown in the portfolio section is incredible. What shutter angle was used?",
-      "minutesAgo": 2160,
+      "createdAt": "2025-11-02T18:09:00Z",
       "parentId": null
     },
     {
       "id": "c-7",
       "username": "Mariam Siddiqui",
       "text": "Really loved how simple and engaging the beginner playlist is. Finished all 5 lessons in one evening.",
-      "minutesAgo": 2880,
+      "createdAt": "2025-09-19T14:22:00Z",
       "parentId": null
     },
     {
       "id": "c-8",
       "username": "Usman Ghani",
       "text": "Looking forward to the Intermediate course! Any estimate on when lesson 1 drops?",
-      "minutesAgo": 4320,
+      "createdAt": "2025-08-06T08:47:00Z",
       "parentId": null
     },
     {
       "id": "c-9",
       "username": "Fatima Zahra",
       "text": "The explanation of J-cuts and L-cuts in editing was so clear. Made an immediate difference in my vlogs.",
-      "minutesAgo": 5760,
+      "createdAt": "2025-06-24T19:31:00Z",
       "parentId": null
     },
     {
       "id": "c-10",
       "username": "Rehan Sheikh",
       "text": "Great website layout and portfolio presentation brother! Very inspiring journey.",
-      "minutesAgo": 7200,
+      "createdAt": "2025-05-09T11:05:00Z",
       "parentId": null
     },
     {
       "id": "c-11",
       "username": "Khadija Ali",
       "text": "The advice to never over-rely on flashy transitions before getting the story pacing right is golden.",
-      "minutesAgo": 9000,
+      "createdAt": "2025-03-27T16:18:00Z",
       "parentId": null
     },
     {
       "id": "c-12",
       "username": "Omar Javed",
       "text": "Filmora was my first editor too back in 2020! Seeing your growth to commercial projects gives so much motivation.",
-      "minutesAgo": 10800,
+      "createdAt": "2025-02-11T09:42:00Z",
       "parentId": null
     }
   ];
 
   function seedComments() {
-    var now = Date.now();
     return SEED.map(function (c) {
       return {
         id: c.id,
         username: c.username,
         text: c.text,
-        createdAt: new Date(now - c.minutesAgo * 60000).toISOString(),
+        createdAt: c.createdAt,
         parentId: c.parentId || null,
         isSample: true,
         mine: false,
